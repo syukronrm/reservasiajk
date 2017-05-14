@@ -10,10 +10,25 @@
 }
 
 #clock-container {
-	margin-top: 40px;
-	margin-bottom: 20px;
+	padding-top: 40px;
+	margin-bottom: 0px;
 }
 
 #upcoming-container {
 	margin: 25px;
+}
+
+#particles-js {
+	width: 100%;
+    height: 100%;
+	position: absolute;
+}
+
+#event-now {
+	color: white;
+    font-size: -webkit-xxx-large;
+}
+
+.bg-redcoral {
+	background-color: lightcoral !important;
 }
