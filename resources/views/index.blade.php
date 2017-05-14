@@ -6,7 +6,7 @@
   <link rel="stylesheet" type="text/css" href=" {{ asset('/css/semantic.min.css') }}">
   <link rel="stylesheet" type="text/css" href=" {{ asset('/css/style.css') }}">
 </head>
-<body style="background-color: #fff;">
+<body style="background-color: #fff; overflow: hidden;">
 <!-- particles.js container --> 
   <div id="particles-js"></div> 
 
@@ -20,11 +20,11 @@
     </div>
 
     <div class="ui raised segments" style="margin: 25px;">
-      <div class="ui green segment center aligned bg-redcoral">
+      <div class="ui green segment center aligned bg-redcoral event-title">
         <h1 id="event-now"></h1>
       </div>
 
-      <div class="ui segment center aligned bg-redcoral">
+      <div class="ui segment center aligned bg-redcoral event-title">
         <h3 id="time"></h3>
       </div>
     </div>
@@ -68,17 +68,18 @@
           datatype: 'jsonp',
           success: function(data) {
             if (data.now) {
-              var now = data.now;
+              // console.log(data.now[0]);
+              var now = data.now[0];
               var start = moment(now.start, "YYYY-MM-DD HH:mm:ss");
               var end = moment(now.end, "YYYY-MM-DD HH:mm:ss");
 
-
               $('#event-now').text(now.keperluan);
               $('#time').text(start.format('HH:mm')+ " - " + end.format('HH:mm'));
+              $('.event-title').removeClass('bg-green').addClass('bg-redcoral');
             } else {
               $('#event-now').text("We're open!");
               $('#time').text("");
-
+              $('.event-title').removeClass('bg-redcoral').addClass('bg-green');
             }
 
 
@@ -91,7 +92,10 @@
               var start = moment(event.start, "YYYY-MM-DD HH:mm:ss");
               var end = moment(event.end, "YYYY-MM-DD HH:mm:ss");
 
-              $("#upcoming").append("<h4 class='ui header'>"+ event.keperluan +"<div class='sub header'>"+ start.format('HH:mm')+ " - " + end.format('HH:mm') +" | "+ eventStart.format("dddd, DD MMMM YYYY") + "</div></h4>");
+              $("#upcoming").append("<h4 class='ui header'>"+
+                event.keperluan +"<div class='sub header'>"+
+                start.format('HH:mm dddd, DD MMMM YYYY')+ " - " +
+                end.format('HH:mm dddd, DD MMMM YYYY')+ "</div></h4>");
             }
 
           },
