@@ -39,9 +39,9 @@
     </div>
   </div>
   <script src="{{ asset('/js/jquery.min.js') }}" type="text/javascript"></script>
-  <script src="{{ asset('/js/semantic.min.js') }}" type="text/javascript" charset="utf-8" async defer></script>
-  <script src="{{ asset('/js/moment.min.js') }}" type="text/javascript" charset="utf-8" async defer></script>
-  <script src="{{ asset('/js/particles.min.js') }}" type="text/javascript" charset="utf-8" async defer></script>
+  <script src="{{ asset('/js/semantic.min.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('/js/moment.min.js') }}" type="text/javascript"</script>
+  <script src="{{ asset('/js/particles.min.js') }}" type="text/javascript"></script>
 
   <script type="text/javascript">
     $(document).ready(function(){
