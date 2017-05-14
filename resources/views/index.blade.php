@@ -61,7 +61,7 @@
 
       function updateJadwal() {
         $.ajax({
-          url: 'http://localhost:8000/jadwal',
+          url: "{{URL::to('/')}}/jadwal",
           data: {
             format: 'json'
           },
