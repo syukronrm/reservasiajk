@@ -10,7 +10,7 @@ use App\User;
 class AuthController extends Controller
 {
     function showLoginForm() {
-    	return view('login');
+    	return view('auth.login');
     }
 
     function login(Request $request) {
@@ -29,7 +29,7 @@ class AuthController extends Controller
     }
 
     public function showRegister() {
-        return view('register');
+        return view('auth.register');
     }
 
     public function register(Request $request) {

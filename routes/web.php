@@ -28,3 +28,5 @@ Route::post('/reserve', 'HomeController@reserve');
 
 Route::get('/register', 'AuthController@showRegister');
 Route::post('/register', 'AuthController@register');
+
+Route::get('/test', 'HomeController@showtest');
