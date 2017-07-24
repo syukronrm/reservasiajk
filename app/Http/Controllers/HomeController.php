@@ -35,6 +35,7 @@ class HomeController extends Controller
     public function jadwal() {
         $timeNow = date_format(new \DateTime(), "Y-m-d H:i:s");
         $now = DB::select('select * from reservations where `start`< now() and `end`> now() and status="ACCEPTED" limit 1;');
+        // $now = Reservations::where()
         $upcoming = DB::select('select * from reservations where `start`> now() and status="ACCEPTED" ORDER BY start ASC LIMIT 5;');
 
         $jadwalNow = null;

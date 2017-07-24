@@ -18,12 +18,12 @@ Route::get('/login', 'AuthController@showLoginForm');
 Route::post('/login', 'AuthController@login');
 Route::get('/logout', 'AuthController@logout');
 
-Route::get('/admin', 'AdminController@index');
+Route::get('/admin', ['uses' => 'AdminController@index', 'as' => 'index.admin']);
 Route::post('/admin/accept', 'AdminController@accept');
 Route::post('/admin/reject', 'AdminController@reject');
 Route::post('/admin/delete', 'AdminController@delete');
 
-Route::get('/reserve', 'HomeController@showReserve');
+Route::get('/reserve', ['uses' => 'HomeController@showReserve', 'as' => 'add.reservation']);
 Route::post('/reserve', 'HomeController@reserve');
 
 Route::get('/register', 'AuthController@showRegister');
