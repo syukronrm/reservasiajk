@@ -14,17 +14,23 @@
 Route::get('/', 'HomeController@index');
 Route::get('/jadwal', 'HomeController@jadwal');
 
-Route::get('/login', 'AuthController@showLoginForm');
-Route::post('/login', 'AuthController@login');
-Route::get('/logout', 'AuthController@logout');
 
-Route::get('/admin', ['uses' => 'AdminController@index', 'as' => 'index.admin']);
-Route::post('/admin/accept', 'AdminController@accept');
-Route::post('/admin/reject', 'AdminController@reject');
-Route::post('/admin/delete', 'AdminController@delete');
+Route::group(['middleware' => ['guest']], function (){
+    Route::get('/login', ['uses' => 'AuthController@showLoginForm', 'as' => 'login']);
+    Route::post('/login', ['uses' => 'AuthController@login', 'as' => 'auth.login']);
+});
 
-Route::get('/reserve', ['uses' => 'HomeController@showReserve', 'as' => 'add.reservation']);
-Route::post('/reserve', 'HomeController@reserve');
+Route::group(['middleware' => ['auth']], function (){
+    Route::get('/admin', ['uses' => 'AdminController@index', 'as' => 'index.admin']);
+    Route::post('/admin/accept', 'AdminController@accept');
+    Route::post('/admin/reject', 'AdminController@reject');
+    Route::post('/admin/delete', 'AdminController@delete');
+
+    Route::get('/reserve', ['uses' => 'HomeController@showReserve', 'as' => 'form.reservation']);
+    Route::post('/reserve', 'HomeController@reserve');
+
+    Route::get('/logout', ['uses' => 'AuthController@logout', 'as' => 'logout']);
+});
 
 Route::get('/register', 'AuthController@showRegister');
 Route::post('/register', 'AuthController@register');

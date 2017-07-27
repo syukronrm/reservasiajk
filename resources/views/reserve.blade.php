@@ -40,13 +40,8 @@
 @endsection
 
 @section('js')
-	<!-- Moment -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-	<!-- Datetimepicker -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js">
-
-	</script>
-
+	<script src="{{URL::asset('js/moment.min.js')}}"></script>
+	<script src="{{URL::asset('js/bootstrap-datetimepicker.min.js')}}"></script>
 	<script type="text/javascript">
         $(function () {
             $('#startTime').datetimepicker();

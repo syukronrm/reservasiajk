@@ -3,8 +3,8 @@
 <head>
   @yield('css')
   <title>Reservasi AJK</title>
-  <link rel="stylesheet" type="text/css" href=" {{ asset('/css/semantic.min.css') }}">
-  <link rel="stylesheet" type="text/css" href=" {{ asset('/css/style.css') }}">
+  <link rel="stylesheet" type="text/css" href=" {{URL::asset('css/semantic.min.css')}}">
+  <link rel="stylesheet" type="text/css" href=" {{URL::asset('css/style.css')}}">
 </head>
 <body style="background-color: #fff; overflow: hidden;">
 <!-- particles.js container --> 
@@ -12,7 +12,7 @@
 
   <div class="ui container">
     <div class="logo" style="text-align: center; padding-top:20%; ">
-      <img src="{{ asset('logo_blue.png')}}" height="200px" width="auto">
+      <img src="{{URL::asset('logo_blue.png')}}" height="200px" width="auto">
     </div>
     <div id="clock-container">
       <h1 id="clock"></h1>
@@ -38,10 +38,10 @@
       </div>
     </div>
   </div>
-  <script src="{{ asset('/js/jquery.min.js') }}" type="text/javascript"></script>
-  <script src="{{ asset('/js/semantic.min.js') }}" type="text/javascript"></script>
-  <script src="{{ asset('/js/moment.min.js') }}" type="text/javascript"></script>
-  <script src="{{ asset('/js/particles.min.js') }}" type="text/javascript"></script>
+  <script src="{{URL::asset('js/jquery.min.js')}}" type="text/javascript"></script>
+  <script src="{{URL::asset('js/semantic.min.js')}}" type="text/javascript"></script>
+  <script src="{{URL::asset('js/moment.min.js')}}" type="text/javascript"></script>
+  <script src="{{URL::asset('js/particles.min.js')}}" type="text/javascript"></script>
 
   <script type="text/javascript">
     $(document).ready(function(){

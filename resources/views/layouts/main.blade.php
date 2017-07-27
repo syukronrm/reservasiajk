@@ -22,7 +22,8 @@
           <br><br><br>
         </div>
         <div class="pull-left info">
-          <p>Nama</p>
+          <p>{{Auth::user()->nrp}}</p>
+          <p>{{Auth::user()->name}}</p>
         </div>
       </div>
       <ul class="sidebar-menu">
@@ -43,7 +44,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="#"><i class="fa fa-angle-double-right"></i> List Reservasi</a></li>
-            <li><a href="{{route('add.reservation')}}"><i class="fa fa-angle-double-right"></i> Tambah Reservasi</a></li>
+            <li><a href="{{route('form.reservation')}}"><i class="fa fa-angle-double-right"></i> Tambah Reservasi</a></li>
           </ul>
         </li>
       </ul>
