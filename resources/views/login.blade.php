@@ -13,7 +13,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="{{route('admin.index')}}">Reservasi<b>AJK</b></a>
+    <a href="{{route('index')}}">Reservasi<b>AJK</b></a>
   </div>
   <div class="login-box-body">
     <p class="login-box-msg">Log in</p>

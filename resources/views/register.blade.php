@@ -13,7 +13,7 @@
 <body class="hold-transition register-page">
 <div class="register-box">
   <div class="register-logo">
-    <a href="/">Reservasi<b>AJK</b></a>
+    <a href="{{route('index')}}">Reservasi<b>AJK</b></a>
   </div>
 
   <div class="register-box-body">
