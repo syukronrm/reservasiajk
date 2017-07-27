@@ -2,6 +2,10 @@
 
 @section('title', 'Admin Reservasi')
 
+@section('navbar')
+@include('layouts.navbar')
+@endsection
+
 @section('content')
 	<div class="col-xs-5">
 		<form method="POST" action="/reserve">

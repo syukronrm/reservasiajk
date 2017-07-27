@@ -2,6 +2,9 @@
 
 @section('title', 'Admin Reservasi')
 
+@section('navbar')
+@include('layouts.navbar')
+@endsection
 @section('content')
 <table id="reservation" class="display" cellspacing="0" width="100%">
 	<thead>
